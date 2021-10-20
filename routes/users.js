@@ -8,9 +8,6 @@ var { getCookie } = require('../middlewares/auth');
 router.use(getCookie);
 /* GET users listing. */
 router.get('', async (req, res, next) => {
-  if (res.locals.error) {
-    return;
-  }
   var token;
   var respuesta = await axios.get("https://www.google.com/", {withCredentials: true})
   .then(function (response) {
