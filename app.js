@@ -4,6 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var routes = require('./routes');
+var indexRouter = require('./routes/index');
+var sesionRouter = require('./routes/users');
+var alarmRouter = require('./routes/alarmapi');
 var app = express();
 require('dotenv').config();
 
@@ -17,7 +20,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
 
 app.use(express.static(path.join(__dirname, 'public')));
 
